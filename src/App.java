@@ -14,7 +14,10 @@ import java.io.InputStreamReader;
 import java.net.*;
 
 public class App {
-    public static String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjFmOTM1MGI1LWFiZjUtNGY2ZC04YzI4LWU0YWYzNzc4Njc4MyIsImlhdCI6MTczMjQzMTcxMiwic3ViIjoiZGV2ZWxvcGVyL2YzMWE0YWIwLTZmYTQtOTVkMS0wNmQxLTFlZmRiOGIyMzQzNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjIxMC4xMTkuMjM3LjEwNCIsIjE0LjYzLjUuMTMxIl0sInR5cGUiOiJjbGllbnQifV19.hbjp-hGE9Fx3fgLWNH18g5MIWdfRqct4HgYIBvDAGONjaP6SPy1uff_bYfIYR91CSdaFMag1JpjZXxkb12bW7w";
+    public static String token_house = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjYwYzc5MTlmLWU3NmQtNDZiNy05YjQwLThkMjc0ODViYmZiYSIsImlhdCI6MTczMDk5ODg3NCwic3ViIjoiZGV2ZWxvcGVyL2YzMWE0YWIwLTZmYTQtOTVkMS0wNmQxLTFlZmRiOGIyMzQzNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjQ5LjE2Ny4xNTUuMTQzIl0sInR5cGUiOiJjbGllbnQifV19.1z5VQd00uf5MtK2myPZAIF3K2D-Fj_uJLMO9pPFAGWYh885klFGULhMbGjZKzkMNoM9LuEcDREImBNRig-PPfA";
+    public static String token_school = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6Ijk3YTlhYjAwLWJmZGItNDNkNS1hMmZlLTRmYTU1Nzk0MTFlMyIsImlhdCI6MTczMjI0OTk0MCwic3ViIjoiZGV2ZWxvcGVyL2YzMWE0YWIwLTZmYTQtOTVkMS0wNmQxLTFlZmRiOGIyMzQzNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjIxMC4xMTkuMjM3LjEwNCJdLCJ0eXBlIjoiY2xpZW50In1dfQ.KtyDXBmDk9c_PsRxVOvV1XsfSR3trjfpuxETNUS4FCr9vq9LKhQo9BmlmUxgsqIHk6QE43cMpMYGb5nQqy-6MA";
+    public static String token_brain = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjJkYmQwMDA1LWY4NTAtNDQ3OC1hYmQxLTllMmUzZDhhODc2MSIsImlhdCI6MTczMTc2MDM0Miwic3ViIjoiZGV2ZWxvcGVyL2YzMWE0YWIwLTZmYTQtOTVkMS0wNmQxLTFlZmRiOGIyMzQzNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjIxMC4xMTkuMjM3LjEwNCIsIjE0LjUyLjE3Ny4yMTEiXSwidHlwZSI6ImNsaWVudCJ9XX0.C4m_fCEqs6CFjPNfm1-9BTOGg3tki3ixjue5FuYJB9s6KPPTUY_nko4M5nqCNMPPQ7sxEViNNvVAUX-ANUAg3A";
+    public static String token = token_house;
     public static void main(String[] args) throws Exception {
         // printMembers();
         // System.out.println("----------------------------");
@@ -31,7 +34,7 @@ public class App {
             default:
 
         }
-
+        kb.close();
     }
 
     public static void connectDatabase() {
@@ -61,6 +64,10 @@ public class App {
         JSONObject war = getWarInfo();
 
         String state = war.getString("state");
+        if(!state.equals("inWar")) {
+            System.out.println("ERROR : not in war");
+            return;
+        }
         int teamSize = war.getInt("teamSize");
         JSONArray opMembers = war.getJSONObject("opponent").getJSONArray("members");
         HashMap<String, Integer> opponent = new HashMap<String, Integer>();
@@ -248,8 +255,6 @@ public class App {
         HttpURLConnection conn = null;
         JSONObject responseJson = null;
         try {
-
-            //String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjYwYzc5MTlmLWU3NmQtNDZiNy05YjQwLThkMjc0ODViYmZiYSIsImlhdCI6MTczMDk5ODg3NCwic3ViIjoiZGV2ZWxvcGVyL2YzMWE0YWIwLTZmYTQtOTVkMS0wNmQxLTFlZmRiOGIyMzQzNSIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjQ5LjE2Ny4xNTUuMTQzIl0sInR5cGUiOiJjbGllbnQifV19.1z5VQd00uf5MtK2myPZAIF3K2D-Fj_uJLMO9pPFAGWYh885klFGULhMbGjZKzkMNoM9LuEcDREImBNRig-PPfA";
             URL url = new URL(
                     "https://api.clashofclans.com/v1/clans/" + URLEncoder.encode("#2QV2VL99J", "UTF-8") + "/members");
             System.err.println("making connection to : " + "https://api.clashofclans.com/v1/clans/"
