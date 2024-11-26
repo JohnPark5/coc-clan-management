@@ -22,10 +22,24 @@ public class App {
         // printMembers();
         // System.out.println("----------------------------");
         Scanner kb = new Scanner(System.in);
-        System.out.println("1. printWarInfo\n2. connect to database(local)\n3. exit\n >> ");
+        System.out.print("1. printWarInfo\n2. connect to database(local)\n3. exit\n >> ");
         int input = kb.nextInt();
         switch (input) {
             case 1:
+                System.out.print("1. house 2. school 3. brain >> ");
+                int loc = kb.nextInt();
+                switch (loc) {
+                    case 1:
+                    break;
+                    case 2:
+                        token = token_school;
+                    break;
+                    case 3:
+                        token = token_brain;
+                    break;                
+                    default:
+                    break;
+                }
                 printWarInfo();
                 break;
             case 2:
